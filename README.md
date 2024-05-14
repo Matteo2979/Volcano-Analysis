@@ -1,4 +1,5 @@
 # Exploratory Data Analysis with Python
-Using Python
-data cleaning, data preparation,
-data exploration, and data visualization
+    For this Exploratory data analysis with Python,
+    I show the process of data cleaning,
+    data preparation, data exploration,
+    and data visualization
