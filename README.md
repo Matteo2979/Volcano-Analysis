@@ -1,5 +1,4 @@
 # Exploratory Data Analysis with Python
-![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/a4f29ec3-889e-40b3-ac96-ec028baad625)
 ![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c87d1379-8a0d-42e8-91c9-ecd2639f2f03)
 
     For this exploratory data analysis with Python, 
