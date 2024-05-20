@@ -2,11 +2,9 @@
 ![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/a4f29ec3-889e-40b3-ac96-ec028baad625)
 ![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c87d1379-8a0d-42e8-91c9-ecd2639f2f03)
 
-    What makes a Volcano Dangerous? Which Volcanic
-    areas pose the greatest threat to humans? 
-    
-    For this Exploratory data analysis with Python,
-    I show the process of preparing, cleaning, 
+    For this exploratory data analysis with Python, 
+    I show which volcanoes pose the greatest threat
+    to civilization through the process of preparing, cleaning, 
     exploring, and visualizing data. 
 
 ![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/05adabe1-dc79-4dd9-8e0d-d6e859384d67)
