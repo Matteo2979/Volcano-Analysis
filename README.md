@@ -1,4 +1,4 @@
-# Exploratory Data Analysis with Python and Foursquare Studio
+# Exploratory Data Analysis with Python
 ![Screenshot 2024-05-31 030433](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/fdc20c08-0933-4201-a59c-cef694db7a5a)
 
     For this exploratory data analysis with Python, 
