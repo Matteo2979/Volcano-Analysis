@@ -5,6 +5,6 @@
     to civilization through the process of preparing,
     cleaning, exploring, and visualizing data. 
 
-![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/05adabe1-dc79-4dd9-8e0d-d6e859384d67)
+![Screenshot 2024-06-08 024726](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/53e45879-6be1-4706-bcba-29ba6102c329)
 ![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f7ba62e1-677a-4010-9c26-672ec7dc9626)
 ![Screenshot 2024-06-06 051721](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d4ad986e-80a3-44b1-af89-92d3505c3a33)
