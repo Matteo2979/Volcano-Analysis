@@ -1,6 +1,5 @@
 # Exploratory Data Analysis with Python
-![Screenshot 2024-05-31 030433](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/fdc20c08-0933-4201-a59c-cef694db7a5a)
-![image](https://colab.research.google.com/drive/10vSAS8rdqZ7c1By0INMh0jENFkeB6DHm#scrollTo=lVF7IIgog9eJ&line=3&uniqifier=1)
+![Screenshot 2024-06-06 051641](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/6147f29b-681d-48ff-a019-329a0e376f20)
     For this exploratory data analysis with Python, 
     I show which volcanoes pose the greatest threat
     to civilization through the process of preparing,
@@ -8,3 +7,4 @@
 
 ![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/05adabe1-dc79-4dd9-8e0d-d6e859384d67)
 ![image](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f7ba62e1-677a-4010-9c26-672ec7dc9626)
+![Screenshot 2024-06-06 051721](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d4ad986e-80a3-44b1-af89-92d3505c3a33)
