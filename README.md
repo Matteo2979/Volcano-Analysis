@@ -1,21 +1,18 @@
 # Exploratory Data Analysis with Python
-    For this exploratory data analysis with Python, 
-    I show which volcanoes pose the greatest threat
-    to civilization through the process of preparing,
-    cleaning, exploring, and visualizing data. 
+-    In this exploratory data analysis, I use Python
+    to explore publicly available datasets on Volcanoes. This shows the process of preparing,
+    cleaning, and visualizing the data in order to better understand Volcanoes complex characteristics and which areas of the world are under the greatest threat.
     
 # Datasets sources
+"Global Volcanism Program, 2024. [Database] Volcanoes of the World (v. 5.1.7; 26 Apr 2024) -
+Distributed by Smithsonian Institution, compiled by Venzke, E." https://doi.org/10.5479/si.GVP.VOTW5-2023.5.1
+
 "National Geophysical Data Center / World Data Service (NGDC/WDS): NCEI/WDS Global Significant Volcanic Eruptions Database -
 NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5JW8BSH
 
 "Global Volcanism Program, Smithsonian Institution" https://volcano.si.edu/database/search_eruption_results.cfm
-![Screenshot 2024-06-08 030015](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c5a6c277-1622-43c0-88a0-475e28275a60)
-![Screenshot 2024-06-08 030120](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d99a3f41-7c5f-4a85-a0d1-6e06b0e201f4)
-![Screenshot 2024-06-08 030732](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/23626e7a-5fcc-4e8c-b5dd-b345880330f4)
-![Screenshot 2024-06-08 031250](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d0a972d2-c017-4f83-a7e8-c58ed0955be9)
-![Screenshot 2024-06-08 031533](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/dfc26edf-6031-4225-ae78-1a86efb60612)
-![Screenshot 2024-06-08 031748](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/454a88b0-732a-4d95-9b32-94eded1375c6)
-![Screenshot 2024-06-09 055203](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f885714c-8aa9-4c03-80e2-92321d899713)
+
+
 ![donut_region_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2ca18ce1-a977-4143-8cdc-4b6c4905e878)
 ![Screenshot 2024-06-09 052452](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/90b0581a-46d3-4e51-beaa-ec04f2222393)
 ![boxplot_erup](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/6921506a-bd3f-4431-bbe7-a822cc721037)
