@@ -4,7 +4,8 @@
     to civilization through the process of preparing,
     cleaning, exploring, and visualizing data. 
     
-![Screenshot 2024-06-08 025149](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2bb02d92-0187-453c-a069-d9e5932177e3)
+# Datasets sources
+"Global Volcanism Program, Smithsonian Institution" https://volcano.si.edu/database/search_eruption_results.cfm
 ![Screenshot 2024-06-08 030015](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c5a6c277-1622-43c0-88a0-475e28275a60)
 ![Screenshot 2024-06-08 030120](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d99a3f41-7c5f-4a85-a0d1-6e06b0e201f4)
 ![Screenshot 2024-06-08 030732](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/23626e7a-5fcc-4e8c-b5dd-b345880330f4)
