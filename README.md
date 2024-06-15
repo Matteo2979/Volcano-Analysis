@@ -40,6 +40,7 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 ![Screenshot 2024-06-15 035143](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ad1ebc46-a7cb-447f-99c0-b0aa79877d8a)
 
 - Checking for outliers and how data is distributed
+
 ![Screenshot 2024-06-15 044753](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/85502f5a-0122-44fb-9cf5-5fe06d155ca0)
 ![boxplot_erup](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/6921506a-bd3f-4431-bbe7-a822cc721037)
 ![boxplot_avgVEI](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4d336b7c-b42c-43e8-9a9c-1edaed87fbfa)
@@ -47,9 +48,11 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 
 # Visualizing the Data
 - Table showing which countries have the most Volcanes, as well as the number of eruptions, population radius within 5 and 10km, and the total amount of deaths by Volcano per country.
+
 ![Screenshot 2024-06-15 043038](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0752c1fd-1c09-4a90-a79d-b29111ae96ba)
 
 - Bubble and donut chart highliting the regions with the most eruptions, largest populations, and largest death tolls.
+
 ![Screenshot 2024-06-15 044142](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ab85b2f2-9653-4cd3-9a71-cb771bdbbb9c)
 ![bubblechart_region](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f098df99-77f3-4958-90b1-d2fa3b8a2699)
 ![donut_region_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2ca18ce1-a977-4143-8cdc-4b6c4905e878)
@@ -60,10 +63,13 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 ![seaborn_vei_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d9658678-440c-433b-9da3-ee719cb85f11)
 
 - Checking for correlations
+
 ![Screenshot 2024-06-15 050219](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c3d75e99-6b6d-40be-a78c-065f4a522344)
 ![new_matrix](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ffc0ec40-4d2b-4fe8-8627-419e2b25667f)
 ![Screenshot 2024-06-15 051258](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/98c26929-64c4-4b1e-89b0-21bfde0bb1db)
+
 - Creating a Composite Index Score in order to scale each Volcano based on its characteristics
+
 ![Screenshot 2024-06-15 051556](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/64ed3bd9-86bc-4490-8750-b97b11d18133)
 
 # Map created using Foursquare Studio to visualize the Volcanic danger zones based on the Composite Index Score, as well as the sum of their population radius within 30 kilometers.
