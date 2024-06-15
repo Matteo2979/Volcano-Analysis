@@ -39,20 +39,34 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 
 ![Screenshot 2024-06-15 035143](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ad1ebc46-a7cb-447f-99c0-b0aa79877d8a)
 
-![bubblechart_region](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f098df99-77f3-4958-90b1-d2fa3b8a2699)
-
-![donut_region_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2ca18ce1-a977-4143-8cdc-4b6c4905e878)
-![Screenshot 2024-06-09 052452](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/90b0581a-46d3-4e51-beaa-ec04f2222393)
+- Checking for outliers and how data is distributed
+![Screenshot 2024-06-15 044753](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/85502f5a-0122-44fb-9cf5-5fe06d155ca0)
 ![boxplot_erup](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/6921506a-bd3f-4431-bbe7-a822cc721037)
 ![boxplot_avgVEI](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4d336b7c-b42c-43e8-9a9c-1edaed87fbfa)
-![boxplot_10km](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/5e20a4ae-1689-421a-b3bd-58a82b83225c)
-![Screenshot 2024-06-09 055345](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/06d1041b-d9b5-4dad-90bb-9b93e398cf9a)
-![seaborn_vei_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d9658678-440c-433b-9da3-ee719cb85f11)
-![Screenshot 2024-06-09 054008](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/5607c9eb-60fc-43f2-aa87-035ba249d337)
-![hist_volc_type](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/59523e45-4e45-4176-9275-a5a76cde2aa7)
+![boxplot_30km](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2575702c-27e3-4697-a749-1082ae344374)
 
+# Visualizing the Data
+- Table showing which countries have the most Volcanes, as well as the number of eruptions, population radius within 5 and 10km, and the total amount of deaths by Volcano per country.
+![Screenshot 2024-06-15 043038](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0752c1fd-1c09-4a90-a79d-b29111ae96ba)
+
+- Bubble and donut chart highliting the regions with the most eruptions, largest populations, and largest death tolls.
+![Screenshot 2024-06-15 044142](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ab85b2f2-9653-4cd3-9a71-cb771bdbbb9c)
 ![bubblechart_region](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f098df99-77f3-4958-90b1-d2fa3b8a2699)
-![Screenshot 2024-06-09 055836](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/212f5b0a-24df-4d86-ba70-a158ccad39da)
-![matrix](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/18f476b9-8962-4c12-89ec-b8a3759352b9)
+![donut_region_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2ca18ce1-a977-4143-8cdc-4b6c4905e878)
+
+- Scatter plot with regression line showing that eruptions with a larger VEI resulted in more deaths.
+
+![Screenshot 2024-06-15 050031](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/a4a871c4-b044-4c74-8d4e-7e1f8e05bcc2)
+![seaborn_vei_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d9658678-440c-433b-9da3-ee719cb85f11)
+
+- Checking for correlations
+![Screenshot 2024-06-15 050219](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c3d75e99-6b6d-40be-a78c-065f4a522344)
+![new_matrix](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ffc0ec40-4d2b-4fe8-8627-419e2b25667f)
+![Screenshot 2024-06-15 051258](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/98c26929-64c4-4b1e-89b0-21bfde0bb1db)
+- Creating a Composite Index Score in order to scale each Volcano based on its characteristics
+![Screenshot 2024-06-15 051556](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/64ed3bd9-86bc-4490-8750-b97b11d18133)
+
+# Map created using Foursquare Studio to visualize the Volcanic danger zones based on the Composite Index Score, as well as the sum of their population radius within 30 kilometers.
+  
 ![comp_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/b94d7ad7-19be-4514-b039-7884f9f419c6)
 ![pop_30_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/607408ed-979a-4511-82e9-a5442d84ad6b)
