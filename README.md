@@ -41,12 +41,14 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 
 - Checking for outliers and how data is distributed
 
-![Screenshot 2024-06-15 044753](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/85502f5a-0122-44fb-9cf5-5fe06d155ca0)
-![boxplot_erup](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/6921506a-bd3f-4431-bbe7-a822cc721037)
-![boxplot_avgVEI](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4d336b7c-b42c-43e8-9a9c-1edaed87fbfa)
-![boxplot_30km](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2575702c-27e3-4697-a749-1082ae344374)
+![Screenshot 2024-06-16 032446](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ec3dbea2-6088-491c-b4a5-99454138527a)
+![all_boxplot](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/578c1e4e-e277-4ddb-8b96-348dd28d6bd3)
 
 # Visualizing the Data
+- Map of Volcanoes
+  
+![volcano_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/31edca9d-b9c3-40a9-9f53-aa55e02cf42d)
+
 - Table showing which countries have the most Volcanes, as well as the number of eruptions, population radius within 5 and 10km, and the total amount of deaths by Volcano per country.
 
 ![Screenshot 2024-06-15 043038](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0752c1fd-1c09-4a90-a79d-b29111ae96ba)
@@ -72,7 +74,11 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 
 ![Screenshot 2024-06-15 051556](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/64ed3bd9-86bc-4490-8750-b97b11d18133)
 
-# Map created using Foursquare Studio to visualize the Volcanic danger zones based on the Composite Index Score, as well as the sum of their population radius within 30 kilometers.
+# Maps created with Foursquare Studio 
+- Heatmap of the Volcanoes new Composite Index Score, which ranks each volcano on its level of danger based on several factors. 
   
 ![comp_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/b94d7ad7-19be-4514-b039-7884f9f419c6)
+
+- Heatmap of the Volcanoes Composite Index Score and the population radius within 30 kilometers.
+  
 ![pop_30_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/607408ed-979a-4511-82e9-a5442d84ad6b)
