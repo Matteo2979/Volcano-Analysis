@@ -81,8 +81,9 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 
 - Heatmap of the Volcanoes Composite Index Score and the population radius within 30 kilometers.
 
-![Screenshot 2024-06-28 233317](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/9d9f5161-361b-4809-84bb-029452cda1c1)
-![Screenshot 2024-06-29 033312](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/e53a5ce3-8c1b-43c1-9e44-4c4b54708654)
-![Screenshot 2024-06-28 233450](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/b907fffd-0f2f-4bb5-a396-67cd11a822cf)
-![Screenshot 2024-06-28 233629](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/cb7ca1e3-1ec3-4806-a145-e5dd7209cca8)
+![Designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/7d1addb0-19c9-4e96-bb44-81429cf41cf9)
+![SE_asia_designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c736395d-5621-41ad-aaf9-e82b2b54a9a7)
+![japan_designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0511a4c3-0c02-45b7-ab1b-d8c4a5c56253)
+![italy_designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/541bb38e-f302-418e-a406-4eb247700c77)
+
 
