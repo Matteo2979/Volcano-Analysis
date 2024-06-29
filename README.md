@@ -39,30 +39,31 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 
 ![Screenshot 2024-06-15 035143](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ad1ebc46-a7cb-447f-99c0-b0aa79877d8a)
 
+# Visualizing the Data  
 - Checking for outliers and how data is distributed
 
-![Screenshot 2024-06-16 032446](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ec3dbea2-6088-491c-b4a5-99454138527a)
-![all_boxplot](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/578c1e4e-e277-4ddb-8b96-348dd28d6bd3)
+![Screenshot 2024-06-29 052159](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f1becf41-cbde-4b1a-9863-f9b546f1ecfd)
+![all_boxplot2](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ad322677-cd31-437c-a9d0-49d89eed2e3f)
+![Screenshot 2024-06-29 052701](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4fdc678b-b0cb-41c4-8497-d84e9344a948)
+![histplot_vei](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0ce499c5-0ac8-4ca4-a9fc-fa9270d29487)
 
-# Visualizing the Data
-- Map of Volcanoes
+- Scatter plot with regression line, showing that Volcanoes with a larger Max VEI resulted in more deaths.
   
-![volcano_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/31edca9d-b9c3-40a9-9f53-aa55e02cf42d)
+![Screenshot 2024-06-29 052958](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d2ce8744-052c-45a7-9df9-bbd06fc1f137)
+![seaborn_vei_deaths2](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f6d057b6-0667-4d1a-a014-2b5e64e551d0)
 
-- Table showing which countries have the most Volcanes, as well as the number of eruptions, population radius within 5 and 10km, and the total amount of deaths by Volcano per country.
+- Donut Chart showing Total Deaths per Region (19 total Regions)
+  
+![donut](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/bfa3653b-6231-4353-a311-5bb551fa213b)
+
+- Table showing which countries have the most Volcanes, number of eruptions, population radius within 5 and 10km, and the total amount of deaths caused by Volcanoes.
 
 ![Screenshot 2024-06-15 043038](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0752c1fd-1c09-4a90-a79d-b29111ae96ba)
 
-- Bubble and donut chart highliting the regions with the most eruptions, largest populations, and largest death tolls.
+- Bubble chart highliting the regions with the most eruptions, largest populations, and largest number of Volcanoes.
 
 ![Screenshot 2024-06-15 044142](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ab85b2f2-9653-4cd3-9a71-cb771bdbbb9c)
 ![bubblechart_region](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f098df99-77f3-4958-90b1-d2fa3b8a2699)
-![donut_region_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2ca18ce1-a977-4143-8cdc-4b6c4905e878)
-
-- Scatter plot with regression line showing that eruptions with a larger VEI resulted in more deaths.
-
-![Screenshot 2024-06-15 050031](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/a4a871c4-b044-4c74-8d4e-7e1f8e05bcc2)
-![seaborn_vei_deaths](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d9658678-440c-433b-9da3-ee719cb85f11)
 
 - Checking for correlations
 
