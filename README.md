@@ -70,15 +70,19 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 ![new_matrix](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ffc0ec40-4d2b-4fe8-8627-419e2b25667f)
 ![Screenshot 2024-06-15 051258](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/98c26929-64c4-4b1e-89b0-21bfde0bb1db)
 
-- Creating a Composite Index Score in order to scale each Volcano based on its characteristics
+- Creating a Composite Index Score in order to scale each Volcano based on its characteristics.
 
 ![Screenshot 2024-06-15 051556](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/64ed3bd9-86bc-4490-8750-b97b11d18133)
 
 # Maps created with Foursquare Studio 
-- Heatmap of the Volcanoes new Composite Index Score, which ranks each volcano on its level of danger based on several factors. 
+- Volcano Heatmap weighted by a Composite Index Score, which ranks the danger of each volcano based on several factors. 
   
-![comp_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/b94d7ad7-19be-4514-b039-7884f9f419c6)
+![new_2024-06-28](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/57eb489c-6592-46ac-bd46-7b55635ba2ab)
 
 - Heatmap of the Volcanoes Composite Index Score and the population radius within 30 kilometers.
-  
-![pop_30_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/607408ed-979a-4511-82e9-a5442d84ad6b)
+
+![Screenshot 2024-06-28 233317](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/9d9f5161-361b-4809-84bb-029452cda1c1)
+![Screenshot 2024-06-29 033312](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/e53a5ce3-8c1b-43c1-9e44-4c4b54708654)
+![Screenshot 2024-06-28 233450](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/b907fffd-0f2f-4bb5-a396-67cd11a822cf)
+![Screenshot 2024-06-28 233629](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/cb7ca1e3-1ec3-4806-a145-e5dd7209cca8)
+
