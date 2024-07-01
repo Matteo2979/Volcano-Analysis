@@ -46,6 +46,8 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 ![all_boxplot2](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ad322677-cd31-437c-a9d0-49d89eed2e3f)
 ![Screenshot 2024-06-29 052701](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4fdc678b-b0cb-41c4-8497-d84e9344a948)
 ![histplot_vei](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0ce499c5-0ac8-4ca4-a9fc-fa9270d29487)
+![Screenshot 2024-07-01 012947](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/e64f1529-7355-413f-ae3d-5e4289e5ea05)
+![violin_plot](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4c9a7c8f-d816-4e37-8435-a6d374d3d8f8)
 
 - Scatter plot with regression line, showing that Volcanoes with a larger Max VEI resulted in more deaths.
   
