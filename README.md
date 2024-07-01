@@ -3,11 +3,6 @@
     to explore publicly available datasets on Volcanoes. This shows the process of preparing,
     cleaning, and visualizing the data in order to better understand Volcanoes complex characteristics and which areas of the world are under the greatest threat.
 
-```python
-import pandas as pd
-```
-
-
 # Sources
 "Global Volcanism Program, 2024. [Database] Volcanoes of the World (v. 5.1.7; 26 Apr 2024) -
 Distributed by Smithsonian Institution, compiled by Venzke, E." https://doi.org/10.5479/si.GVP.VOTW5-2023.5.1
