@@ -2,7 +2,12 @@
 -    In this exploratory data analysis, I use Python
     to explore publicly available datasets on Volcanoes. This shows the process of preparing,
     cleaning, and visualizing the data in order to better understand Volcanoes complex characteristics and which areas of the world are under the greatest threat.
-    
+
+```python
+import pandas as pd
+```
+
+
 # Sources
 "Global Volcanism Program, 2024. [Database] Volcanoes of the World (v. 5.1.7; 26 Apr 2024) -
 Distributed by Smithsonian Institution, compiled by Venzke, E." https://doi.org/10.5479/si.GVP.VOTW5-2023.5.1
@@ -15,14 +20,28 @@ NOAA National Centers for Environmental Information" https://doi.org/10.7289/V5J
 # Preparing the Data
 - Importing Libraries
   
-![Screenshot 2024-06-15 031613](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f82c7bb0-1db3-4ce7-b6f6-27d73bae14ca)
+```python
+import pandas as pd
+import geopandas as gpd
+import numpy as np
+import seaborn as sns
+from numpy.ma.core import size
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
+from matplotlib.font_manager import FontEntry
+from matplotlib.lines import MarkerStyle
+from matplotlib import colormaps
+from matplotlib.colors import Colormap
+from google.colab import data_table
+from sklearn.preprocessing import StandardScaler
+```
 
 - Uploading Datasets
-- The main dataset for this analysis is the 'GVP_Volcano_List', which contains a list of all active Volcanoes (active within past 10,000 years) and their various characteristics, including the population radius within 5, 10, 30, and 100 Kilometers, Primary Volcano Type, and more.
+- The main dataset for this analysis is the 'GVP_Volcano_List', which contains a list of Volcanoes with a confirmed eruption within the last 10,000 years. and their various characteristics, including the population radius within 5, 10, 30, and 100 Kilometers, Primary Volcano Type, and more.
 
 ![Screenshot 2024-06-15 031144](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f862508a-a54e-4e3c-aeed-52f1c7e4563b)
 
-- The 'eruption_data' contains data from each individual confirmed eruption within the past 10,000 years, including its VEI  (Volcanis Explosivity Index) rating, which ranges from 1-7, as well as the Start/ End Dates (when known).
+- The 'eruption_data' contains data from each individual confirmed eruption within the past 10,000 years, including its VEI (Volcanis Explosivity Index) rating, which ranges from 1-7, as well as the Start/ End Dates (when known).
 
 - The 'NCEI_volcano_events' dataset contains a list of Volcanic eruptions that resulted in at least 1 death or more.
 
