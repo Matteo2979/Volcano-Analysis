@@ -98,43 +98,210 @@ data_table.DataTable(kestrel)
 ```
 ![Screenshot 2024-07-02 023918](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d042b737-08fd-49ac-84d6-1dd521949440)
 
-# Cleaning the Data
-- Dropping  unneeded columns, checking for missing data, and checking datatypes
+# Cleaning the Main Dataset
 
-![Screenshot 2024-06-15 034522](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/cb805457-ad47-4e54-93c9-684252123119)
+```python
+kestrel.columns
+```
+![Screenshot 2024-07-02 025447](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/be91f602-ebe0-41ea-82d5-92cb3ce0c538)
 
-- Combining and merging data and creating new features.
-- The new features added to the dataset include the average VEI, Max VEI, number of eruptions, and the total amount of deaths per Volcano.
 
-![Screenshot 2024-06-15 035143](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ad1ebc46-a7cb-447f-99c0-b0aa79877d8a)
+```python
+kestrel.drop(columns=['Evidence Category', 'Major Rock 2',
+                      'Major Rock 3', 'Major Rock 4', 'Major Rock 5',
+                      'Minor Rock 1', 'Minor Rock 2', 'Minor Rock 3',
+                      'Minor Rock 4', 'Minor Rock 5', 'Tectonic Settings'], inplace=True)
+```
+- Checking for missing data
 
-# Visualizing the Data  
+```python
+for col in kestrel.columns:
+  pct_null = np.mean(kestrel[col].isnull())
+  print('{}: {}'.format(col, pct_null))
+```
+![Screenshot 2024-07-02 025350](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/af2d22bc-34d3-412b-ba0a-8a9868236b26)
+
 - Checking for outliers and how data is distributed
 
-![Screenshot 2024-06-29 052159](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f1becf41-cbde-4b1a-9863-f9b546f1ecfd)
-![all_boxplot2](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ad322677-cd31-437c-a9d0-49d89eed2e3f)
-![Screenshot 2024-06-29 052701](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4fdc678b-b0cb-41c4-8497-d84e9344a948)
-![histplot_vei](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0ce499c5-0ac8-4ca4-a9fc-fa9270d29487)
-![Screenshot 2024-07-01 012947](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/e64f1529-7355-413f-ae3d-5e4289e5ea05)
-![violin_plot](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/4c9a7c8f-d816-4e37-8435-a6d374d3d8f8)
+```python
+variables = ['Population within 5 km', 'Population within 10 km', 'Population within 30 km', 'Population within 100 km']
+
+# Create a figure and a set of subplots
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(8, 8))
+
+axes = axes.flatten()
+
+# Generate a boxplot for each variable
+for i, var in enumerate(variables):
+    sns.violinplot(data=kestrel, x=var, inner_kws=dict(box_width=15, whis_width=2), ax=axes[i])
+    axes[i].set_title(f'Violin Plot of {var.replace("_", " ").title()}')
+    
+plt.tight_layout()
+```
+![violin_allpop](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c7ddddb1-cda5-4052-a08f-6c07f43c2206)
+
+- Distribution of Primary Volcano Type for all Volcanoes
+
+```python
+plt.figure(figsize=(6, 6))
+
+sns.histplot(kestrel['Primary Volcano Type'], bins=8)
+
+plt.title('Distribution of Primary Volcano Type', fontsize=10)
+plt.xticks(rotation=90, ha='center', fontsize=6)
+plt.tight_layout()
+```
+![hist_maintype](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/9875afda-1b2b-478e-a879-a0c9703e7d4b)
+
+# Merging data and Feature Engineering
+- The new features added to the dataset include the average VEI, Max VEI, number of eruptions, and the total amount of deaths per Volcano.
+
+```python
+ # Group by Volcano Name and find Average VEI
+average_vei = eruption_data.groupby("Volcano Name")["VEI"].mean().reset_index()
+  # Merge
+combined_data = kestrel.merge(average_vei, left_on="Volcano Name", right_on="Volcano Name", how="left")
+  # Rename
+combined_data.rename(columns = {"VEI": "Average VEI"}, inplace = True)
+
+  # Total Deaths
+total_deaths_per_volcano = volcano_sparrow.groupby("Volcano Name")["Total Deaths"].sum().reset_index()
+combined_data = combined_data.merge(total_deaths_per_volcano, on="Volcano Name", how="left")
+combined_data.rename(columns={"Total Deaths": "Total Deaths"}, inplace=True)
+
+  # Largest VEI
+max_vei = eruption_data.groupby("Volcano Name")["VEI"].max().reset_index()
+combined_data = combined_data.merge(max_vei, left_on="Volcano Name", right_on="Volcano Name", how="left")
+
+  # Eruption Count
+eruption_counts = eruption_data.groupby("Volcano Name").size().reset_index(name="eruption_count")
+combined_data = combined_data.merge(eruption_counts, left_on="Volcano Name", right_on="Volcano Name", how="left")
+
+  # First Eruption year
+first_er = eruption_data.groupby("Volcano Name")["Start Year"].min().reset_index()
+combined_data = combined_data.merge(first_er, left_on="Volcano Name", right_on="Volcano Name", how="left")
+
+  # Average Eruption length (in days)
+average_vei = eruption_data.groupby("Volcano Name")["days"].mean().reset_index()
+combined_data = kestrel.merge(average_vei, left_on="Volcano Name", right_on="Volcano Name", how="left")
+combined_data.rename(columns={"days": "AVG erup (days)"}, inplace=True)
+```
+  
+- Checking the new data features for outliers their distribution
+
+```python
+variables = ['Eruption Count', 'MAX VEI', 'AVG VEI']
+
+fig, axes = plt.subplots(nrows=3, ncols=1, figsize=(7, 7))
+
+for i, var in enumerate(variables):
+    sns.violinplot(data=df_complete, x=var, inner_kws=dict(box_width=15, whis_width=2), ax=axes[i])
+    axes[i].set_title(f'Distribution of {var.replace("_", " ").title()}')
+
+plt.tight_layout()
+```
+![violin_newfeat](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/173f36a5-2c09-4951-b51b-197e44afc759)
+
+```python
+variables = ['MAX VEI', 'AVG VEI']
+
+fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(7, 7))
+
+axes = axes.flatten()
+
+for i, var in enumerate(variables):
+    sns.histplot(data=df_complete, x=var, kde=True, ax=axes[i])
+    axes[i].set_title(f'Distribution of {var.replace("_", " ").title()}')
+
+plt.tight_layout()
+```
+![histplot_vei](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/12187ef1-c0d4-4eb9-a147-dd345622d7e2)
 
 - Scatter plot with regression line, showing that Volcanoes with a larger Max VEI resulted in more deaths.
   
-![Screenshot 2024-06-29 052958](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d2ce8744-052c-45a7-9df9-bbd06fc1f137)
+```python
+sns.regplot(x='MAX VEI',
+            y='Total Deaths',
+            data=df_complete,
+            scatter_kws={"color": "red"},
+            line_kws={"color":"blue"})
+
+plt.title('Total Deaths per Volcanoes Max VEI', fontsize=10)
+plt.tight_layout()
+```
 ![seaborn_vei_deaths2](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f6d057b6-0667-4d1a-a014-2b5e64e551d0)
 
 - Donut Chart showing Total Deaths per Region (19 total Regions)
-  
+
+```python
+grouped = df_complete.groupby('Region')['Total Deaths'].sum().reset_index()
+fig, ax = plt.subplots(figsize=(8, 8))
+
+wedges, texts, autotexts = ax.pie(
+    grouped['Total Deaths'],
+    labels=None,
+    autopct='%1.1f%%',
+    startangle=90,
+    pctdistance=0.85,
+    colors=plt.cm.tab20.colors
+)
+
+centre_circle = plt.Circle((0, 0), 0.70, fc='white')
+fig.gca().add_artist(centre_circle)
+
+ax.axis('equal')
+
+ax.legend(wedges, grouped['Region'], title="Region", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+ax.set_title('Total Deaths per Region')
+plt.title('Total Deaths per Region', loc='center')
+plt.tight_layout()
+```
 ![donut](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/bfa3653b-6231-4353-a311-5bb551fa213b)
+
+- Bubble chart highliting the regions with the most eruptions, largest populations, and largest number of Volcanoes.
+
+```python
+grouped = df_complete.groupby('Region').agg({
+    'Volcano Name': 'count',
+    'Eruption Count': 'sum',
+    'Pop 10km': 'sum'
+}).reset_index()
+
+grouped.columns = ['Region', 'Volcano Count', 'Eruption Count', 'Population within 10km']
+
+fig, ax = plt.subplots(figsize=(13, 8))
+
+  # Scatter plot with bubble size
+scatter = ax.scatter(
+    grouped['Volcano Count'],
+    grouped['Eruption Count'],
+    s=grouped['Population within 10km'] / 1000,
+    alpha=0.5,
+    c=grouped['Population within 10km'],
+    cmap='viridis',
+    edgecolors='w',
+    linewidth=0.5
+)
+
+ax.set_xlabel('Volcano Count')
+ax.set_ylabel('Eruption Count')
+ax.set_title('Comparison of Volcanoes, Eruption Counts, and Population within 10km per Region')
+
+  # Adding text labels for each bubble
+for i in range(len(grouped)):
+    ax.text(grouped['Volcano Count'][i], grouped['Eruption Count'][i], grouped['Region'][i],
+    fontsize=7, ha='center')
+
+cbar = plt.colorbar(scatter)
+cbar.set_label('Population within 10km')
+
+plt.tight_layout()
+```
+![bubblechart_region](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f098df99-77f3-4958-90b1-d2fa3b8a2699)
 
 - Table showing which countries have the most Volcanes, number of eruptions, population radius within 5 and 10km, and the total amount of deaths caused by Volcanoes.
 
 ![Screenshot 2024-06-15 043038](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0752c1fd-1c09-4a90-a79d-b29111ae96ba)
-
-- Bubble chart highliting the regions with the most eruptions, largest populations, and largest number of Volcanoes.
-
-![Screenshot 2024-06-15 044142](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ab85b2f2-9653-4cd3-9a71-cb771bdbbb9c)
-![bubblechart_region](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f098df99-77f3-4958-90b1-d2fa3b8a2699)
 
 - Checking for correlations
 
