@@ -186,8 +186,15 @@ average_vei = eruption_data.groupby("Volcano Name")["days"].mean().reset_index()
 combined_data = kestrel.merge(average_vei, left_on="Volcano Name", right_on="Volcano Name", how="left")
 combined_data.rename(columns={"days": "AVG erup (days)"}, inplace=True)
 ```
-  
-- Checking the new data features for outliers their distribution
+
+- Main Dataset with new features
+
+```python
+data_table.DataTable(df_complete)
+```
+![Screenshot 2024-07-02 032111](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c23bfe34-92b8-41d7-9d9d-9f92efb57ddf)
+
+- Checking the new data features for outliers and their distribution
 
 ```python
 variables = ['Eruption Count', 'MAX VEI', 'AVG VEI']
@@ -303,13 +310,13 @@ plt.tight_layout()
 
 ![Screenshot 2024-06-15 043038](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0752c1fd-1c09-4a90-a79d-b29111ae96ba)
 
-- Checking for correlations
+# Checking for correlations
 
 ![Screenshot 2024-06-15 050219](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c3d75e99-6b6d-40be-a78c-065f4a522344)
 ![new_matrix](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ffc0ec40-4d2b-4fe8-8627-419e2b25667f)
 ![Screenshot 2024-06-15 051258](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/98c26929-64c4-4b1e-89b0-21bfde0bb1db)
 
-- Creating a Composite Index Score in order to scale each Volcano based on its characteristics.
+# Creating a Composite Index Score in order to scale each Volcano based on its characteristics.
 
 ![Screenshot 2024-06-15 051556](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/64ed3bd9-86bc-4490-8750-b97b11d18133)
 
