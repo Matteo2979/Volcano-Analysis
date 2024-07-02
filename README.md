@@ -36,12 +36,19 @@ volcano_sparrow = pd.read_csv("NCEI_volcano_events.csv")
 kestrel = pd.read_csv("GVP_Volcano_List.csv")
 ```
 
-- The 'eruption_data' contains data from each individual confirmed eruption within the past 10,000 years, including its VEI (Volcanis Explosivity Index) rating, which ranges from 1-7, as well as the Start/ End Dates (when known).
+- The 'eruption_data' contains data from each individual confirmed eruption within the past 10,000 years, including its Volcanic Explosivity Index (VEI) rating, as well as the Start/ End Dates (when known).
+    - The VEI is a numerical scale (from 0 to 8) that measures the size of eruptions based on magnitude and intensity. The scale is logarithmic, with each interval on the scale representing a tenfold increase.
+    ![nps_GOV_vei_diagram](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2d7b5e2d-f870-4f8d-babf-b68884fd75ab)
+    Image Source: https://volcanoes.usgs.gov/vsc/images/image_mngr/4800-4899/img4803_500w_836h.png
 
 ```python
 data_table.DataTable(eruption_data)
 ```
-![Screenshot 2024-07-02 020830](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ca5b59e1-fb05-451b-b91a-be97384784fd)
+![Screenshot 2024-07-02 040755](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/89ccb1b0-81bc-4c2c-92d0-a778a7f7d9fe)
+
+
+
+- Violin Plot showing the distribution of each eruptions VEI rating
 
 ```python
 sns.violinplot(data=eruption_data, x='VEI',inner_kws=dict(box_width=15, whis_width=2))
@@ -49,6 +56,8 @@ plt.title('Distribution of VEI', fontsize=10)
 plt.tight_layout()
 ```
 ![eruption_vei_violin](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/dadd8e2b-ede9-4603-8cb2-9ba9012dfbc6)
+
+- Boxplot showing the distribution of how long each Eruption lasted (in days)
 
 ```python
 sns.boxplot(data=eruption_data, x='days')
