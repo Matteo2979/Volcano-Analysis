@@ -67,6 +67,7 @@ plt.tight_layout()
 ```
 ![days_boxplot](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/676e4918-5c2c-4795-b675-a62a505b7583)
 
+
 - The 'NCEI_volcano_events' dataset contains a list of Volcanic eruptions that resulted in at least 1 death or more.
 
 ```python
@@ -75,13 +76,16 @@ data_table.DataTable(volcano_sparrow)
 ![Screenshot 2024-07-02 022634](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f8e6c28c-eb50-4d77-b28c-fa45a5159314)
 
 
-- Scatter plot showing the death count per type of Volcano
+- Scatter plot showing the Total amount of death per type of Volcano
 
 ```python
 sns.scatterplot(data=volcano_sparrow, x='Total Deaths', y='Type')
 plt.tight_layout()
 ```
 ![scatter_sparrow](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ebb8f5f6-cf32-4757-a07f-3001c13e659f)
+
+
+- Histogram showing the distribution of volcano types with at least 1 death or more
 
 ```python
 sns.histplot(volcano_sparrow['Type'], bins=8)
@@ -92,12 +96,16 @@ plt.tight_layout()
 ```
 ![type_hist_sparrow](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/bacdfc02-2fbf-4f06-8933-da96e807160d)
 
+
+- Violin plot showing the distribution of VEI scores based on the types of volcanoes
+
 ```python
 sns.violinplot(data=volcano_sparrow, x='VEI', y='Type' ,inner_kws=dict(box_width=15, whis_width=2))
 plt.tight_layout()
 ```
 ![violin_type_sparrow](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f2d79d9d-dc43-416c-805c-80856bea5618)
 
+- Line graph showing the death tolls from volcanoes over time 
 ```python
 sns.lineplot(data=volcano_sparrow.query('Year > 1499'), x="Year", y="Total Deaths")
 plt.tight_layout()
@@ -134,7 +142,7 @@ for col in kestrel.columns:
 ```
 ![Screenshot 2024-07-02 025350](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/af2d22bc-34d3-412b-ba0a-8a9868236b26)
 
-- Checking for outliers and how data is distributed
+- Checking for outliers and how population is distributed
 
 ```python
 variables = ['Population within 5 km', 'Population within 10 km', 'Population within 30 km', 'Population within 100 km']
@@ -237,7 +245,7 @@ plt.tight_layout()
 ```
 ![histplot_vei](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/12187ef1-c0d4-4eb9-a147-dd345622d7e2)
 
-- Scatter plot with regression line, showing that Volcanoes with a larger Max VEI resulted in more deaths.
+- Scatter plot with regression line, showing that volcanoes with a larger 'Max VEI', result in larger death tolls per .
   
 ```python
 sns.regplot(x='MAX VEI',
