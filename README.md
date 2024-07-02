@@ -39,7 +39,8 @@ kestrel = pd.read_csv("GVP_Volcano_List.csv")
 - The 'eruption_data' contains data from each individual confirmed eruption within the past 10,000 years, including its Volcanic Explosivity Index (VEI) rating, as well as the Start/ End Dates (when known).
     - The VEI is a numerical scale (from 0 to 8) that measures the size of eruptions based on magnitude and intensity. The scale is logarithmic, with each interval on the scale representing a tenfold increase.
     ![nps_GOV_vei_diagram](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/2d7b5e2d-f870-4f8d-babf-b68884fd75ab)
-    Image Source: https://volcanoes.usgs.gov/vsc/images/image_mngr/4800-4899/img4803_500w_836h.png
+
+        Image Source: https://volcanoes.usgs.gov/vsc/images/image_mngr/4800-4899/img4803_500w_836h.png
 
 ```python
 data_table.DataTable(eruption_data)
@@ -72,6 +73,9 @@ plt.tight_layout()
 data_table.DataTable(volcano_sparrow)
 ```
 ![Screenshot 2024-07-02 022634](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f8e6c28c-eb50-4d77-b28c-fa45a5159314)
+
+
+- Scatter plot showing the death count per type of Volcano
 
 ```python
 sns.scatterplot(data=volcano_sparrow, x='Total Deaths', y='Type')
