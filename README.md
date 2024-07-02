@@ -245,7 +245,8 @@ plt.tight_layout()
 ```
 ![histplot_vei](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/12187ef1-c0d4-4eb9-a147-dd345622d7e2)
 
-- Scatter plot with regression line, showing that volcanoes with a larger 'Max VEI', result in larger death tolls per .
+
+- Scatter plot with regression line, showing that volcanoes with a larger 'Max VEI', have larger death tolls per single eruption event.
   
 ```python
 sns.regplot(x='MAX VEI',
@@ -258,6 +259,7 @@ plt.title('Total Deaths per Volcanoes Max VEI', fontsize=10)
 plt.tight_layout()
 ```
 ![seaborn_vei_deaths2](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f6d057b6-0667-4d1a-a014-2b5e64e551d0)
+
 
 - Donut Chart showing Total Deaths per Region (19 total Regions)
 
