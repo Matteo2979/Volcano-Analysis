@@ -30,18 +30,71 @@ from matplotlib.colors import Colormap
 from google.colab import data_table
 from sklearn.preprocessing import StandardScaler
 ```
+```python
+eruption_data = pd.read_csv("eruptions_smithsonian.csv")
+volcano_sparrow = pd.read_csv("NCEI_volcano_events.csv")
+kestrel = pd.read_csv("GVP_Volcano_List.csv")
+```
 
-- Uploading Datasets
+- The 'eruption_data' contains data from each individual confirmed eruption within the past 10,000 years, including its VEI (Volcanis Explosivity Index) rating, which ranges from 1-7, as well as the Start/ End Dates (when known).
+
+```python
+data_table.DataTable(eruption_data)
+```
+![Screenshot 2024-07-02 020830](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ca5b59e1-fb05-451b-b91a-be97384784fd)
+
+```python
+sns.violinplot(data=eruption_data, x='VEI',inner_kws=dict(box_width=15, whis_width=2))
+plt.title('Distribution of VEI', fontsize=10)
+plt.tight_layout()
+```
+![eruption_vei_violin](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/dadd8e2b-ede9-4603-8cb2-9ba9012dfbc6)
+
+```python
+sns.boxplot(data=eruption_data, x='days')
+plt.title('Distribution of Eruption Length (in days)', fontsize=10)
+plt.tight_layout()
+```
+![days_boxplot](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/676e4918-5c2c-4795-b675-a62a505b7583)
+
+- The 'NCEI_volcano_events' dataset contains a list of Volcanic eruptions that resulted in at least 1 death or more.
+
+```python
+data_table.DataTable(volcano_sparrow)
+```
+![Screenshot 2024-07-02 022634](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f8e6c28c-eb50-4d77-b28c-fa45a5159314)
+
+```python
+sns.scatterplot(data=volcano_sparrow, x='Total Deaths', y='Type')
+plt.tight_layout()
+```
+![scatter_sparrow](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ebb8f5f6-cf32-4757-a07f-3001c13e659f)
+
+```python
+sns.histplot(volcano_sparrow['Type'], bins=8)
+
+plt.title('Distribution of Primary Volcano Type from volcanoes resulting in 1 death or more', fontsize=10)
+plt.xticks(rotation=90, ha='center', fontsize=6)
+plt.tight_layout()
+```
+![type_hist_sparrow](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/bacdfc02-2fbf-4f06-8933-da96e807160d)
+
+```python
+sns.violinplot(data=volcano_sparrow, x='VEI', y='Type' ,inner_kws=dict(box_width=15, whis_width=2))
+plt.tight_layout()
+```
+![violin_type_sparrow](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f2d79d9d-dc43-416c-805c-80856bea5618)
+
+```python
+sns.lineplot(data=volcano_sparrow.query('Year > 1499'), x="Year", y="Total Deaths")
+plt.tight_layout()
+```
+![death_year_line](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/e90d5cbe-71a8-440a-89f9-2e6644499fe1)
+
 - The main dataset for this analysis is the 'GVP_Volcano_List', which contains a list of Volcanoes with a confirmed eruption within the last 10,000 years. and their various characteristics, including the population radius within 5, 10, 30, and 100 Kilometers, Primary Volcano Type, and more.
 
 ![Screenshot 2024-06-15 031144](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f862508a-a54e-4e3c-aeed-52f1c7e4563b)
 
-- The 'eruption_data' contains data from each individual confirmed eruption within the past 10,000 years, including its VEI (Volcanis Explosivity Index) rating, which ranges from 1-7, as well as the Start/ End Dates (when known).
-
-- The 'NCEI_volcano_events' dataset contains a list of Volcanic eruptions that resulted in at least 1 death or more.
-
-
-![Screenshot 2024-06-15 032344](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f6d63a2a-b777-45d9-8bb4-a7ec61bfdcf2)
 
 # Cleaning the Data
 - Dropping  unneeded columns, checking for missing data, and checking datatypes
