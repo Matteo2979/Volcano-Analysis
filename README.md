@@ -93,8 +93,10 @@ plt.tight_layout()
 
 - The main dataset for this analysis is the 'GVP_Volcano_List', which contains a list of Volcanoes with a confirmed eruption within the last 10,000 years. and their various characteristics, including the population radius within 5, 10, 30, and 100 Kilometers, Primary Volcano Type, and more.
 
-![Screenshot 2024-06-15 031144](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f862508a-a54e-4e3c-aeed-52f1c7e4563b)
-
+```python
+data_table.DataTable(kestrel)
+```
+![Screenshot 2024-07-02 023918](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d042b737-08fd-49ac-84d6-1dd521949440)
 
 # Cleaning the Data
 - Dropping  unneeded columns, checking for missing data, and checking datatypes
