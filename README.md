@@ -161,6 +161,7 @@ plt.tight_layout()
 ```
 ![violin_allpop](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c7ddddb1-cda5-4052-a08f-6c07f43c2206)
 
+
 - Distribution of Primary Volcano Type for all Volcanoes
 
 ```python
@@ -173,6 +174,7 @@ plt.xticks(rotation=90, ha='center', fontsize=6)
 plt.tight_layout()
 ```
 ![hist_maintype](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/9875afda-1b2b-478e-a879-a0c9703e7d4b)
+
 
 # Merging data and Feature Engineering
 - The new features added to the dataset include the average VEI, Max VEI, number of eruptions, and the total amount of deaths per Volcano.
@@ -208,12 +210,38 @@ combined_data = kestrel.merge(average_vei, left_on="Volcano Name", right_on="Vol
 combined_data.rename(columns={"days": "AVG erup (days)"}, inplace=True)
 ```
 
+
 - Main Dataset with new features
 
 ```python
 data_table.DataTable(df_complete)
 ```
 ![Screenshot 2024-07-02 032111](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c23bfe34-92b8-41d7-9d9d-9f92efb57ddf)
+
+
+- Aggregating data by Countries to show which have the most Volcanes, and show their corresponding attributes.
+
+```python
+df_merged = df_complete.groupby('Country')['Volcano Name'].count().reset_index(name='Number of Volcanoes')
+
+df_5km = df_complete.groupby('Country')['Population within 5 km'].sum().reset_index()
+df_10km = df_complete.groupby('Country')['Pop 10km'].sum().reset_index()
+df_deaths = df_complete.groupby('Country')['Total Deaths'].sum().reset_index()
+df_erup = df_complete.groupby('Country')['Eruption Count'].sum().reset_index()
+
+df_merged = df_merged.merge(df_erup, on='Country', how='left')
+
+df_merged['Eruptions Per Volcano'] = df_merged['Number of Volcanoes'] / df_complete['Eruption Count']
+df_merged['Eruptions Per Volcano'] = df_merged['Eruptions Per Volcano'].round(2)
+
+df_merged = df_merged.merge(df_deaths, on='Country', how='left')
+df_merged = df_merged.merge(df_5km, on='Country', how='left')
+df_merged = df_merged.merge(df_10km, on='Country', how='left')
+
+df_merged.sort_values(by=['Number of Volcanoes'], ascending=False).head(15)
+```
+![Screenshot 2024-07-03 024301](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/3f0a5b8a-3934-4846-b9d5-92680f817e20)
+
 
 - Checking the new data features for outliers and their distribution
 
@@ -229,6 +257,7 @@ for i, var in enumerate(variables):
 plt.tight_layout()
 ```
 ![violin_newfeat](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/173f36a5-2c09-4951-b51b-197e44afc759)
+
 
 ```python
 variables = ['MAX VEI', 'AVG VEI']
@@ -329,21 +358,87 @@ plt.tight_layout()
 ```
 ![bubblechart_region](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/f098df99-77f3-4958-90b1-d2fa3b8a2699)
 
-- Table showing which countries have the most Volcanes, number of eruptions, population radius within 5 and 10km, and the total amount of deaths caused by Volcanoes.
-
-![Screenshot 2024-06-15 043038](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0752c1fd-1c09-4a90-a79d-b29111ae96ba)
 
 # Checking for correlations
 
-![Screenshot 2024-06-15 050219](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c3d75e99-6b6d-40be-a78c-065f4a522344)
-![new_matrix](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/ffc0ec40-4d2b-4fe8-8627-419e2b25667f)
-![Screenshot 2024-06-15 051258](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/98c26929-64c4-4b1e-89b0-21bfde0bb1db)
+- To numerize all columns for correlation matrix (changing categorical values as numerical values).
+
+```python
+df_integer = df_complete
+
+for col_name in df_integer.columns:
+  if(df_integer[col_name].dtype == 'object'):
+    df_integer[col_name] = df_integer[col_name].astype('category')
+    df_integer[col_name] = df_integer[col_name].cat.codes
+
+df_integer
+```
+
+```python
+df_integer.corr(method='spearman')
+
+corr_matrix = df_integer.corr(method='spearman')
+
+sns.heatmap(corr_matrix, annot=True,  fmt='.1f', annot_kws={'fontsize': 7.5}, linewidths= 1, square= False)
+
+plt.title('Correlation Matrix for all Features')
+
+plt.xlabel('Volcano Features')
+
+plt.ylabel('Volcano Features')
+
+plt.rcParams['xtick.labelsize'] = 10
+plt.rcParams['ytick.labelsize'] = 10
+
+plt.show()
+```
+![matrix_spearman](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/8a63fc23-03c7-416c-afd1-61d199714f58)
+
 
 # Creating a Composite Index Score in order to scale each Volcano based on its characteristics.
 
-![Screenshot 2024-06-15 051556](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/64ed3bd9-86bc-4490-8750-b97b11d18133)
+```python
+# List of variables to be included in the composite index
+variables = ['AVG VEI', 'MAX VEI', 'Total Deaths', 'Population within 5 km' , 'Pop 10km', 'Pop 30km', 'Pop 100 km']
+
+# Standardize the variables
+scaler = StandardScaler()
+df_complete[variables] = scaler.fit_transform(df_complete[variables])
+
+# Define weights for each variable (example weights)
+weights = {
+    'AVG VEI': 0.025,
+    'MAX VEI': 0.07,
+    'Total Deaths': 0.095,
+    'Population within 5 km': 0.21,
+    'Pop 10km': 0.215,
+    'Pop 30km': 0.22,
+    'Pop 100 km': 0.165
+}
+
+# Calculate the composite index
+df_complete['composite_index'] = (
+    df_complete['AVG VEI'] * weights['AVG VEI'] +
+    df_complete['MAX VEI'] * weights['MAX VEI'] +
+    df_complete['Total Deaths'] * weights['Total Deaths'] +
+    df_complete['Population within 5 km'] * weights['Pop 10km'] +
+    df_complete['Pop 30km'] * weights['Pop 30km'] +
+    df_complete['Pop 100 km'] * weights['Pop 100 km']
+)
+
+df_complete['rank'] = df_complete['composite_index'].rank(ascending=False)
+
+top_volcanoes = df_complete.sort_values(by='rank').head(166)
+
+top_volcanoes_display = top_volcanoes[['Volcano Name', 'composite_index']]
+top_volcanoes_display
+```
+![Screenshot 2024-07-03 025358](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/46c66849-7ec1-458d-b2ce-7e6fa99e5051)
+
+
 
 # Maps created with Foursquare Studio 
+https://studio.foursquare.com/map/public/3d03e387-9ad8-4305-a636-a0368fdfdada/embed
 - Volcano Heatmap weighted by a Composite Index Score, which ranks the danger of each volcano based on several factors. 
   
 ![new_2024-06-28](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/57eb489c-6592-46ac-bd46-7b55635ba2ab)
