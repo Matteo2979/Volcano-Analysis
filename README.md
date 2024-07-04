@@ -441,13 +441,14 @@ top_volcanoes_display
 https://studio.foursquare.com/map/public/3d03e387-9ad8-4305-a636-a0368fdfdada/embed
 - Volcano Heatmap weighted by a Composite Index Score, which ranks the danger of each volcano based on several factors. 
   
-![new_2024-06-28](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/57eb489c-6592-46ac-bd46-7b55635ba2ab)
+![new_heatmap_world](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/5a7dbcde-f5db-42ba-a6e8-7ad1042e8389)
 
 - Heatmap of the Volcanoes Composite Index Score and the population radius within 30 kilometers.
 
-![Designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/7d1addb0-19c9-4e96-bb44-81429cf41cf9)
-![SE_asia_designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/c736395d-5621-41ad-aaf9-e82b2b54a9a7)
-![japan_designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/0511a4c3-0c02-45b7-ab1b-d8c4a5c56253)
-![italy_designer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/541bb38e-f302-418e-a406-4eb247700c77)
+![foursquare_italy](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/cee9a7ac-4328-47c7-8486-235c5fb0414d)
+![foursquare_seasia](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d0eda6f9-ddcc-43c0-9949-cc3c7ec4dc5f)
+![foursquare_japan](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/aedd0bde-2dc1-42c6-9a24-666725ca2c4f)
+![foursquare_cen_amer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/472a9c54-169f-4bca-ad20-d2f3596e3bc4)
+
 
 
