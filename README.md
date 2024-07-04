@@ -445,10 +445,11 @@ https://studio.foursquare.com/map/public/3d03e387-9ad8-4305-a636-a0368fdfdada/em
 
 - Heatmap of the Volcanoes Composite Index Score and the population radius within 30 kilometers.
 
-![foursquare_italy](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/cee9a7ac-4328-47c7-8486-235c5fb0414d)
-![foursquare_seasia](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d0eda6f9-ddcc-43c0-9949-cc3c7ec4dc5f)
-![foursquare_japan](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/aedd0bde-2dc1-42c6-9a24-666725ca2c4f)
-![foursquare_cen_amer](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/472a9c54-169f-4bca-ad20-d2f3596e3bc4)
+![foursquare_italy](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/a3357d47-82b9-45ba-8e74-588aa8a7e6fe)
+![foursquare_mex](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/931c7c43-67d8-4bd1-8843-cb052f49b1de)
+![foursquare_seasia](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/a9873138-b3e6-4b87-bbe0-ad32726197b6)
+![foursquare_japan](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/b2b3f704-4415-401b-b861-73bbaeade9fe)
+
 
 
 
