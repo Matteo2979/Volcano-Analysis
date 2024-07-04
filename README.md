@@ -438,7 +438,7 @@ top_volcanoes_display
 
 
 # Maps created with Foursquare Studio 
-https://studio.foursquare.com/map/public/3d03e387-9ad8-4305-a636-a0368fdfdada/embed
+https://studio.foursquare.com/map/public/3d03e387-9ad8-4305-a636-a0368fdfdada
 - Volcano Heatmap weighted by a Composite Index Score, which ranks the danger of each volcano based on several factors. 
   
 ![new_heatmap_world](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/5a7dbcde-f5db-42ba-a6e8-7ad1042e8389)
