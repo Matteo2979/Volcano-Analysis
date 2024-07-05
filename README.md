@@ -119,6 +119,7 @@ data_table.DataTable(kestrel)
 ```
 ![Screenshot 2024-07-02 023918](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/d042b737-08fd-49ac-84d6-1dd521949440)
 
+
 # Cleaning the Main Dataset
 
 ```python
@@ -241,6 +242,30 @@ df_merged = df_merged.merge(df_10km, on='Country', how='left')
 df_merged.sort_values(by=['Number of Volcanoes'], ascending=False).head(15)
 ```
 ![Screenshot 2024-07-03 024301](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/3f0a5b8a-3934-4846-b9d5-92680f817e20)
+
+
+```python
+latitudes = df_complete['Latitude']
+longitudes = df_complete['Longitude']
+
+plt.figure(figsize=(16, 11.2))
+m = Basemap(projection='cyl', lon_0=0)
+
+m.drawcoastlines(linewidth=0.1)
+m.drawcountries(linewidth = 0.1)
+m.drawmapboundary(fill_color='#EAF2F8')
+m.fillcontinents(color='#FBFCFC', alpha=0.8, lake_color='#F0FFFF')
+
+x, y = m(longitudes.values, latitudes.values)
+
+sc = m.scatter(x, y, marker='o', color='#E6B0AA' ,s=7, edgecolor='#922B21', linewidths=0.3, alpha=1)
+
+plt.title('World Map of Volcanoes', fontsize=16, loc='left')
+
+plt.tight_layout()
+```
+![volcano_python_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/b6d7c27a-fb81-4a66-b4d2-d267e313e3e4)
+
 
 
 - Checking the new data features for outliers and their distribution
@@ -425,16 +450,39 @@ df_complete['composite_index'] = (
     df_complete['Pop 30km'] * weights['Pop 30km'] +
     df_complete['Pop 100 km'] * weights['Pop 100 km']
 )
-
-df_complete['rank'] = df_complete['composite_index'].rank(ascending=False)
-
-top_volcanoes = df_complete.sort_values(by='rank').head(166)
-
-top_volcanoes_display = top_volcanoes[['Volcano Name', 'composite_index']]
-top_volcanoes_display
 ```
-![Screenshot 2024-07-03 025358](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/46c66849-7ec1-458d-b2ce-7e6fa99e5051)
+```python
+# Volcanoes ranked by Composite index score (166 Volcanoes)
+df_complete.head(166)
+```
+![Screenshot 2024-07-05 033617](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/cb609c3a-be67-491e-b91e-5c0267cf9d11)
 
+```python
+latitudes = df_index['Latitude']
+longitudes = df_index['Longitude']
+composite_index = df_index['composite_index']
+
+plt.figure(figsize=(16, 11.2))
+m = Basemap(projection='cyl', lon_0=0)
+
+m.drawcoastlines(linewidth=0.1)
+m.drawcountries(linewidth = 0.1)
+m.drawmapboundary(fill_color='#EAF2F8')
+m.fillcontinents(color='#FBFCFC', alpha=0.8, lake_color='#F0FFFF')
+
+x, y = m(longitudes.values, latitudes.values)
+
+sc = m.scatter(x, y, c=composite_index, cmap='magma_r', marker='o', s=30, edgecolor='black', linewidths=0.6, alpha=1)
+
+plt.suptitle('Map of most dangerous Volcanoes based on their Composite Index Score', fontsize=18, x=0.3, va='top')
+plt.title('Composite Index Score weighted by population density (5km-100km), VEI scale, eruption count, and death count', fontstyle='italic' ,fontsize=11, x=0.28, va='bottom')
+
+cbar = plt.colorbar(sc, orientation='horizontal', pad=0.05)
+cbar.set_label('Composite Index Score')
+
+plt.tight_layout()
+```
+![volcano_python_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/8502dd39-f046-4bd2-9c0b-b7d777fd4f9f)
 
 
 # Maps created with Foursquare Studio 
