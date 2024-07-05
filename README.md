@@ -457,6 +457,19 @@ df_complete.head(166)
 ```
 ![Screenshot 2024-07-05 033617](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/cb609c3a-be67-491e-b91e-5c0267cf9d11)
 
+
+```python
+sns.boxplot(x = df_index['composite_index'])
+
+plt.xlabel('Composite Index Score', fontsize=8)
+plt.ylabel('Volcano', fontsize=8)
+plt.title('Composite Index Value by Volcano', fontsize=10)
+
+plt.tight_layout()
+```
+![comp_indeboxplot](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/e1777632-be02-4cef-bf54-38f0327a8aba)
+
+
 ```python
 latitudes = df_index['Latitude']
 longitudes = df_index['Longitude']
