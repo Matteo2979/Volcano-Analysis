@@ -497,6 +497,9 @@ plt.tight_layout()
 ```
 ![volcano_python_index_map](https://github.com/Matteo2979/Volcano-Analysis/assets/105907530/8502dd39-f046-4bd2-9c0b-b7d777fd4f9f)
 
+# Interactive Maps made with Plotly in Python
+- Volcano_plotlymap.ipynb
+
 
 # Maps created with Foursquare Studio 
 https://studio.foursquare.com/map/public/3d03e387-9ad8-4305-a636-a0368fdfdada/embed
